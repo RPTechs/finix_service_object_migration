@@ -1,0 +1,21 @@
+{
+	"name": "tickets_to_billing",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"preview": "vite preview",
+		"dev": "npx tsc && node dist/index.js",
+		"fix": "npx tsc && node dist/fixes.js"
+	},
+	"devDependencies": {
+		"@types/node": "^24.3.0",
+		"nodemon": "^3.1.10",
+		"prettier": "^3.6.2",
+		"typescript": "~5.8.3"
+	},
+	"dependencies": {
+		"@hubspot/api-client": "^13.2.0",
+		"dotenv": "^17.2.2"
+	}
+}

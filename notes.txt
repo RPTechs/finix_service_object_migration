@@ -1,0 +1,10 @@
+PipelineStage {
+	createdAt: 2025-04-21T00:20:23.583Z,
+	archived: false,
+	metadata: { ticketState: 'OPEN', isClosed: 'false' },
+	displayOrder: 1,
+	writePermissions: 'CRM_PERMISSIONS_ENFORCEMENT',
+	label: 'Ready for Finance Review',
+	id: '192344246',
+	updatedAt: 2025-04-21T00:20:23.583Z
+}
