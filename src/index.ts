@@ -4,7 +4,7 @@ import * as consts from './consts.js'
 import { associateRecords, getAssociationsByObjectId } from './associations.js'
 import {
 	createApiServiceRequestObjectsFromFetchedTickets,
-	batchCreateBillingRequests,
+	batchCreateServiceObjects,
 } from './migrate.js'
 import { fetchTickets } from './queries.js'
 import type { T_ALL_ASSOCIATIONS_MAP, T_ASSOCIATIONS_MAP } from './types.js'
@@ -34,7 +34,8 @@ async function main() {
 	// create req objects for HubSpot API
 	const reqObjects = createApiServiceRequestObjectsFromFetchedTickets(tickets)
 
-	const mappings = await batchCreateBillingRequests(
+	// send req objects to create in HubSpot
+	const mappings = await batchCreateServiceObjects(
 		client,
 		reqObjects,
 		consts.SERVICE_OBECT_TYPE_ID,

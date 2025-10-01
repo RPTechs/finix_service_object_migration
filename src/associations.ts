@@ -33,7 +33,7 @@ export async function associateRecords(
 					await client.crm.associations.v4.basicApi.create(
 						'0-49',
 						emailId,
-						'2-49298689',
+						consts.SERVICE_OBECT_TYPE_ID,
 						destId,
 						[
 							{
@@ -57,7 +57,7 @@ export async function associateRecords(
 					await client.crm.associations.v4.basicApi.create(
 						'0-46',
 						noteId,
-						'2-49298689',
+						consts.SERVICE_OBECT_TYPE_ID,
 						destId,
 						[
 							{
@@ -79,7 +79,7 @@ export async function associateRecords(
 			for (const companyId of companies) {
 				try {
 					await client.crm.associations.v4.basicApi.create(
-						'2-49298689',
+						consts.SERVICE_OBECT_TYPE_ID,
 						destId,
 						'company',
 						companyId,
@@ -103,7 +103,7 @@ export async function associateRecords(
 			for (const contactId of contacts) {
 				try {
 					await client.crm.associations.v4.basicApi.create(
-						'2-49298689',
+						consts.SERVICE_OBECT_TYPE_ID,
 						destId,
 						'contact',
 						contactId,
@@ -126,7 +126,7 @@ export async function associateRecords(
 				for (const dealId of deals) {
 					try {
 						await client.crm.associations.v4.basicApi.create(
-							'2-49298689',
+							consts.SERVICE_OBECT_TYPE_ID,
 							destId,
 							'deal',
 							dealId,
@@ -150,7 +150,7 @@ export async function associateRecords(
 				for (const ticketId of tickets) {
 					try {
 						await client.crm.associations.v4.basicApi.create(
-							'2-49298689',
+							consts.SERVICE_OBECT_TYPE_ID,
 							destId,
 							'ticket',
 							ticketId,
