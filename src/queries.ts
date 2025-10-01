@@ -50,15 +50,11 @@ export async function fetchTickets(client: Client, pageSize: number) {
 				{
 					filters: [
 						{
+							// in implementation pipeline
 							propertyName: 'hs_pipeline',
 							operator: FilterOperatorEnum.Eq,
-							value: '94158235',
+							value: '92673848',
 						},
-						// {
-						// 	propertyName: 'hs_pipeline_stage',
-						// 	operator: FilterOperatorEnum.In,
-						// 	values: ['173020599', '173020600', '173020601'],
-						// },
 					],
 				},
 			],

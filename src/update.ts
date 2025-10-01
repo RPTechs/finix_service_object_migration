@@ -1,6 +1,6 @@
 import { Client } from '@hubspot/api-client'
 import { FIX_MAPPINGS } from './mappings.js'
-import { BILLING_REQUEST_OBECT_TYPE_ID } from './consts.js'
+import { SERVICE_OBECT_TYPE_ID } from './consts.js'
 
 export async function updateBillingRequests(
 	client: Client,
@@ -26,7 +26,7 @@ export async function updateBillingRequests(
 			})
 
 			await client.crm.objects.basicApi.update(
-				BILLING_REQUEST_OBECT_TYPE_ID,
+				SERVICE_OBECT_TYPE_ID,
 				req[0]!,
 				{ properties: updateData }
 			)

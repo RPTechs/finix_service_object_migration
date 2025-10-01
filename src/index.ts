@@ -3,7 +3,7 @@ import { Client } from '@hubspot/api-client'
 import * as consts from './consts.js'
 import { associateRecords, getAssociationsByObjectId } from './associations.js'
 import {
-	createApiBillingRequestObjectsFromFetchedTickets,
+	createApiServiceRequestObjectsFromFetchedTickets,
 	batchCreateBillingRequests,
 } from './migrate.js'
 import { fetchTickets } from './queries.js'
@@ -27,20 +27,19 @@ async function main() {
 	// )
 	// console.log(schema)
 
+	// get Tickets in Implementation Pipeline
 	const tickets = await fetchTickets(client, consts.PAGE_SIZE)
 	console.log(`tickets found: ${tickets.length}`)
 
-	// const tickets = await fetchOneTicketPage(client, 10)
-	const reqObjects = createApiBillingRequestObjectsFromFetchedTickets(tickets)
+	// create req objects for HubSpot API
+	const reqObjects = createApiServiceRequestObjectsFromFetchedTickets(tickets)
 
 	const mappings = await batchCreateBillingRequests(
 		client,
 		reqObjects,
-		consts.BILLING_REQUEST_OBECT_TYPE_ID,
+		consts.SERVICE_OBECT_TYPE_ID,
 		consts.SEND_CHUNK_SIZE
 	)
-	// let mappings = [{ source: '2809652062', dest: '34190142814' }]
-	// console.log(mappings)
 
 	// get associations for source
 	const allAssociationsMap: T_ALL_ASSOCIATIONS_MAP = new Map()

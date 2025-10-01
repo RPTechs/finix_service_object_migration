@@ -2,8 +2,8 @@ import { type T_ASSOCIATIONS_META_MAP } from './types.js'
 
 const secondsToMilliseconds = (seconds: number) => seconds * 1000
 
-export const BILLING_REQUEST_OBECT_TYPE_ID = '2-49298689'
-export const BILLING_REQUEST_INTERNAL_NAME = 'billing_requests'
+export const SERVICE_OBECT_TYPE_ID = '0-162'
+export const SERVICE_OBJECT_INTERNAL_NAME = 'services'
 export const PAGE_SIZE = 100
 export const SEND_CHUNK_SIZE = 100
 const TEN_SECOND_LIMIT = 90
